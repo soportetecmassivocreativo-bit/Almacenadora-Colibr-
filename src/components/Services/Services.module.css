@@ -1,0 +1,228 @@
+.section {
+  padding: 3.5rem 4rem;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.header {
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--brand-navy);
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+
+/* Part 1: Management Banner Card Layout */
+.managementBanner {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+}
+
+.managementImageWrapper {
+  flex: 1.2;
+  min-height: 420px;
+  position: relative;
+  overflow: hidden;
+}
+
+.managementImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.managementContent {
+  flex: 1;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.managementTitle {
+  font-family: var(--font-primary);
+  font-size: 2.3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+.managementList {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.managementList li {
+  margin-bottom: 0.75rem;
+}
+
+/* Spacer / Anchor between sections */
+.divider {
+  height: 2rem;
+  position: relative;
+}
+
+/* Part 2: Operations Gallery Layout */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.galleryCard {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03), inset 0 3px 6px rgba(255, 255, 255, 0.85);
+  -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 80%, rgba(255, 255, 255, 0.03));
+  transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.galleryCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(245, 132, 3, 0.2), inset 0 3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.galleryImageWrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.galleryImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.galleryCard:hover .galleryImage {
+  transform: scale(1.08);
+}
+
+.galleryImageRight {
+  object-position: 85% center !important;
+}
+
+.galleryCardBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.galleryCardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--brand-navy);
+  text-transform: uppercase;
+}
+
+.galleryCardDesc {
+  color: var(--text-primary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .imageCard {
+    height: 500px;
+  }
+  .galleryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .managementBanner {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+  .left {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .imageCard {
+    height: 400px;
+  }
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 2.25rem;
+  }
+  .managementBanner {
+    flex-direction: column;
+  }
+  .managementImageWrapper {
+    min-height: 250px;
+  }
+  .managementContent {
+    padding: 2.5rem 1.5rem;
+  }
+  .managementTitle {
+    font-size: 1.8rem;
+  }
+}
+
+.decorLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decorRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header, .container, .galleryGrid, .managementBanner {
+  position: relative;
+  z-index: 2;
+}

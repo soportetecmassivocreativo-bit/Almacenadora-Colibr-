@@ -1,0 +1,108 @@
+.section {
+  padding: 4rem 4rem;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: stretch;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.capacity {
+  flex: 1;
+  max-width: 650px;
+  width: 100%;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  color: var(--text-primary);
+  border: 2px solid var(--primary-color);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 3px 6px rgba(255, 255, 255, 0.85);
+  -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 80%, rgba(255, 255, 255, 0.03));
+  transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.capacity:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(245, 132, 3, 0.2), inset 0 3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--brand-navy);
+}
+
+.list {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 2;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.capList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.capItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(245, 132, 3, 0.15);
+  padding: 1rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.capItem span:last-child {
+  font-weight: 700;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-align: center;
+  background-color: white;
+  border: 1.5px solid var(--brand-navy);
+  color: var(--brand-navy);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+}
+
+.decorRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.capacity {
+  position: relative;
+  z-index: 2;
+}

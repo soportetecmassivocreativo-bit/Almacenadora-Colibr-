@@ -1,0 +1,162 @@
+.section {
+  padding: 3.5rem 4rem;
+  background-color: var(--brand-navy);
+  color: var(--text-primary);
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--brand-orange);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.mapWrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tierContainer {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 3px 6px rgba(255, 255, 255, 0.85);
+}
+
+.tierHeader {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--primary-color);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.tierGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.tierCard {
+  background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 100%);
+  border: 1px solid rgba(245, 132, 3, 0.35);
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02), inset 0 2px 3px rgba(255, 255, 255, 0.95);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tierCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: 0 6px 15px rgba(245, 132, 3, 0.12);
+}
+
+.coreFlowRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clientBadge {
+  background-color: var(--text-primary);
+  color: white;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.flowGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  flex: 1;
+}
+
+.flowStep {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  color: var(--text-primary);
+  border: 2px solid var(--primary-color);
+  padding: 1.5rem 1.25rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03), inset 0 3px 5px rgba(255, 255, 255, 0.85);
+  position: relative;
+  -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 80%, rgba(255, 255, 255, 0.03));
+  transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.flowStep:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(245, 132, 3, 0.25), inset 0 3px 5px rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1024px) {
+  .tierGrid, .flowGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .coreFlowRow {
+    flex-direction: column;
+  }
+  .clientBadge {
+    writing-mode: horizontal-tb;
+    transform: none;
+    width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+  .tierGrid, .flowGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.decorLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header, .mapWrapper {
+  position: relative;
+  z-index: 2;
+}

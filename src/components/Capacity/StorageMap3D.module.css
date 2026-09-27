@@ -1,0 +1,160 @@
+.mapContainer {
+  flex: 1.2;
+  min-height: 480px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  padding: 0.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 3px 6px rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary);
+}
+
+.techHeader {
+  border-left: 3px solid var(--brand-navy);
+  padding-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.techTitle {
+  font-family: var(--font-primary);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--brand-navy);
+}
+
+.techSubtitle {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+.svgWrapper {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  display: block;
+}
+
+/* 2D Zone Rectangles & Interactions */
+.zoneGroup {
+  cursor: pointer;
+}
+
+.zoneRect {
+  transition: stroke-width 0.3s ease, fill-opacity 0.3s ease, stroke 0.3s ease;
+}
+
+.zoneGroup:hover .zoneRect {
+  stroke-width: 3.5px;
+}
+
+/* Zone 1 (Blue) Hover */
+.zoneGroup:hover rect[stroke="#2895DE"] {
+  fill: rgba(40, 149, 222, 0.35);
+  filter: drop-shadow(0 0 15px rgba(40, 149, 222, 0.3));
+}
+
+/* Zone 2 (Orange) Hover */
+.zoneGroup:hover rect[stroke="#F58403"] {
+  fill: rgba(245, 132, 3, 0.35);
+  filter: drop-shadow(0 0 15px rgba(245, 132, 3, 0.3));
+}
+
+/* Zone 3 (Red) Hover */
+.zoneGroup:hover rect[stroke="#BF0011"] {
+  fill: rgba(191, 0, 17, 0.35);
+  filter: drop-shadow(0 0 15px rgba(191, 0, 17, 0.3));
+}
+
+/* Zone 4 (Navy) Hover */
+.zoneGroup:hover rect[stroke="#0d3b60"] {
+  fill: rgba(13, 59, 96, 0.5);
+  filter: drop-shadow(0 0 15px rgba(13, 59, 96, 0.4));
+  stroke: #2895DE; /* Brighten navy border to match brand active states */
+}
+
+/* Capacity number text styles */
+.capText {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 900;
+  transition: fill 0.3s ease, font-size 0.3s ease;
+  user-select: none;
+}
+
+.zoneGroup:hover .capText {
+  fill: #FFFFFF !important;
+}
+
+/* Interactive Floating Labels */
+.labelGroup {
+  opacity: 0.6;
+  transition: opacity 0.35s ease;
+}
+
+.labelActive, 
+.zoneGroup:hover ~ .labelGroup {
+  opacity: 1 !important;
+}
+
+/* Specific label-highlight connections */
+.zoneGroup:hover ~ .labelGroup line {
+  stroke-width: 2.2px;
+}
+
+/* Telemetry Footer */
+.techFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.55);
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 5;
+}
+
+.coordDisplay {
+  color: var(--text-primary);
+}
+
+.systemStatus {
+  color: var(--brand-navy);
+  font-weight: 700;
+  animation: pulseStatus 2s infinite ease-in-out;
+}
+
+@keyframes pulseStatus {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.perimeterGroup {
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.perimeterGroup:hover {
+  opacity: 1;
+}

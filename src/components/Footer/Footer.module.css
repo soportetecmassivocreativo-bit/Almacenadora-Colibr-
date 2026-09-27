@@ -1,0 +1,159 @@
+.footer {
+  background-color: #BF0011; /* Color rojo oscuro corporativo solicitado por el usuario */
+  color: #FFFFFF;
+  padding: 5rem 4rem 2.5rem;
+  font-family: var(--font-secondary);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logoImage {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+}
+
+.desc {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  max-width: 320px;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.socialCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.socialCircle:hover {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.col h4 {
+  font-family: var(--font-primary);
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.col li {
+  margin-bottom: 0.85rem;
+}
+
+.col a {
+  color: rgba(255, 255, 255, 0.85);
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.col a:hover {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contactIcon {
+  color: #FFFFFF;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.contactItemLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.contactItemLink:hover .contactItem {
+  opacity: 0.85;
+}
+
+.rifBadge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+
+.bottom {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 3.5rem 2rem 1.5rem;
+  }
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

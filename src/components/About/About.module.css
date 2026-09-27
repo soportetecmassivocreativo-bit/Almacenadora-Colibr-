@@ -1,0 +1,199 @@
+.section {
+  padding: 3.5rem 4rem;
+  background-color: var(--brand-navy);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+}
+
+.introCard {
+  width: 100%;
+  max-width: 850px;
+  align-self: center;
+  text-align: center;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--brand-orange);
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
+}
+
+.mainTitle {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.introText {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  padding: 2.5rem;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), inset 0 3px 6px rgba(255, 255, 255, 0.85);
+  -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 85%, rgba(255, 255, 255, 0.04));
+  transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(245, 132, 3, 0.2), inset 0 3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.missionCard {
+  width: 100%;
+}
+
+.visionCard {
+  width: 100%;
+}
+
+.cardTitle {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+}
+
+.text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+/* Valores Corporativos */
+.valuesSection {
+  margin-top: 2rem;
+}
+
+.valuesTitle {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.valueCard {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, rgba(255, 246, 214, 0.85) 50%, rgba(255, 255, 255, 0.95) 100%);
+  border: 2px solid var(--primary-color);
+  border-radius: 16px;
+  padding: 2.5rem 1.75rem;
+  text-align: center;
+  transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 3px 6px rgba(255, 255, 255, 0.85);
+  -webkit-box-reflect: below 2px linear-gradient(transparent, transparent 80%, rgba(255, 255, 255, 0.03));
+  color: var(--text-primary);
+}
+
+.valueCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(245, 132, 3, 0.2), inset 0 3px 6px rgba(255, 255, 255, 0.9);
+}
+
+.valueIconWrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--primary-color);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.valueCard h4 {
+  font-family: var(--font-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.valueCard p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 2rem;
+    gap: 4rem;
+  }
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .card {
+    padding: 2rem;
+  }
+  .cardTitle, .valuesTitle, .mainTitle {
+    font-size: 2rem;
+  }
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+  .introText {
+    font-size: 1.1rem;
+  }
+}
+
+.decorLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.introCard, .cardsContainer, .valuesSection {
+  position: relative;
+  z-index: 2;
+}
